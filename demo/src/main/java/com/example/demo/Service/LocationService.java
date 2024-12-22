@@ -29,4 +29,8 @@ public class LocationService {
     public Location findById(Long id) {
         return locationRepository.findById(id).orElse(null);
     }
+
+    public Location findByName(String name) {
+        return locationRepository.findByName(name).orElse(null);
+    }
 }

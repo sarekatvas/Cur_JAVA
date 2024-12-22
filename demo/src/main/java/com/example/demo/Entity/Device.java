@@ -8,6 +8,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "devices")
 public class Device {
@@ -31,6 +33,8 @@ public class Device {
     @ManyToOne
     @JoinColumn(name = "location_id")
     private Location location;
+    private String status;
+    private BigDecimal price;
 
     // Getters and Setters
     public Long getId() {
@@ -79,5 +83,21 @@ public class Device {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

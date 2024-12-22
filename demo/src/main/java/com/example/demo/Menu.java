@@ -8,15 +8,14 @@ import com.vaadin.flow.router.Route;
 @Route("menu")
 public class Menu extends VerticalLayout {
     private static final int FontSize = 20;
-    private static final int Paddding = 10;
 
     public Menu() {
-        Anchor devicesLink = new Anchor("main", "Devices");
-        Anchor typesLink = new Anchor("types", "Types");
-        Anchor manufacturersLink = new Anchor("manufacturers", "Manufacturers");
-        Anchor networksLink = new Anchor("networks", "Networks");
-        Anchor locationsLink = new Anchor("locations", "Locations");
-        Anchor dashboardLink = new Anchor("dashboard", "Dashboard");
+        Anchor devicesLink = new Anchor("main", "Устройства");
+        Anchor typesLink = new Anchor("types", "Типы устройств");
+        Anchor manufacturersLink = new Anchor("manufacturers", "Производители");
+        Anchor networksLink = new Anchor("networks", "Сети");
+        Anchor locationsLink = new Anchor("locations", "Локации");
+        Anchor dashboardLink = new Anchor("dashboard", "Графики");
 
         devicesLink.getStyle().setFontSize(FontSize + "px");
         typesLink.getStyle().setFontSize(FontSize + "px");
@@ -33,8 +32,8 @@ public class Menu extends VerticalLayout {
         dashboardLink.getStyle().set("margin", "0 20px");
 
         HorizontalLayout menuLayout = new HorizontalLayout(devicesLink, typesLink, manufacturersLink, networksLink, locationsLink, dashboardLink);
-        menuLayout.getStyle().set("justify-content", "center");
-        menuLayout.getStyle().set("align-items", "center");
+        menuLayout.setWidth("100%");
+        menuLayout.setJustifyContentMode(JustifyContentMode.CENTER);
         add(menuLayout);
     }
 }

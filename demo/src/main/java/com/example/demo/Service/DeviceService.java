@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Entity.Device;
+import com.example.demo.Entity.Network;
 import com.example.demo.Repositories.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,9 @@ public class DeviceService {
 
     public Device findById(Long id) {
         return deviceRepository.findById(id).orElse(null);
+    }
+
+    public List<Device> findByNetwork(Network network){
+        return deviceRepository.findByNetwork(network);
     }
 }

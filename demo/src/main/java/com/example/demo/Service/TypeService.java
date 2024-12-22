@@ -27,4 +27,7 @@ public class TypeService {
     public Type findById(Long id) {
         return typeRepository.findById(id).orElse(null);
     }
+    public Type findByName(String name) {
+        return typeRepository.findByName(name).orElse(null);
+    }
 }

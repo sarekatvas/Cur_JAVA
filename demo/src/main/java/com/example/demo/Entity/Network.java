@@ -15,6 +15,7 @@ public class Network {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "location_id")
@@ -44,4 +45,13 @@ public class Network {
     public void setLocation(Location location) {
         this.location = location;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 }

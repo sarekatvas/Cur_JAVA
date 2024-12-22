@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Route("main")
+@Route("")
 public class MainView extends VerticalLayout {
     private final DeviceService deviceService;
     private final TypeService typeService;
@@ -70,7 +70,7 @@ public class MainView extends VerticalLayout {
         grid.addColumn(device -> Optional.ofNullable(device.getType()).map(Type::getName).orElse("")).setHeader("Тип устройства").setSortable(true);
         grid.addColumn(device -> Optional.ofNullable(device.getManufacturer()).map(Manufacturer::getName).orElse("")).setHeader("Производитель").setSortable(true);
         grid.addColumn(device -> Optional.ofNullable(device.getNetwork()).map(Network::getName).orElse("")).setHeader("Сеть").setSortable(true);
-        grid.addColumn(device -> Optional.ofNullable(device.getNetwork()).map(Network::getLocation)).setHeader("Месторасположение").setSortable(true);
+        grid.addColumn(device -> Optional.ofNullable(device.getNetwork()).map(Network::getLocation).map(Location::getName).orElse("")).setHeader("Месторасположение").setSortable(true);
         grid.addColumn(device -> Optional.ofNullable(device.getStatus()).orElse("Inactive")).setHeader("Статус").setSortable(true);
         grid.addColumn(device -> Optional.ofNullable(device.getPrice()).orElse(BigDecimal.ZERO)).setHeader("Цена").setSortable(true);
         grid.addItemClickListener(event -> {

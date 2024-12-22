@@ -100,6 +100,8 @@ public class NetworksView extends VerticalLayout {
         mainLayout.setFlexGrow(1, grid);
     }
     private void configureForm() {
+        locationComboBox.setItemLabelGenerator(Location::getName);
+        locationComboBox.setItems(locationService.findAll());
         deleteButton.addClickListener(e -> {
             Network network = grid.asSingleSelect().getValue();
             if (network != null) {
